@@ -1,0 +1,15 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+elasticsearch:
+  host: localhost
+  port: 9200
+
+logging:
+  level:
+    com.enterprise.docsearch: DEBUG
+    org.springframework.amqp: INFO

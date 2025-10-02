@@ -35,3 +35,11 @@ application-local.yml
 # Test
 coverage/
 .nyc_output/
+test-output.log
+full-test-output.txt
+**/surefire-reports/
+**/test-results/
+
+# Test artifacts
+*.txt
+*.log

@@ -19,10 +19,10 @@ import java.util.UUID;
 public class Document {
     
     private UUID documentId;
-    
-    @NotBlank(message = "Tenant ID is required")
+
+    // Note: tenantId is set by the service from TenantContext, not by the user
     private String tenantId;
-    
+
     @NotBlank(message = "Title is required")
     @Size(max = 500, message = "Title must not exceed 500 characters")
     private String title;
