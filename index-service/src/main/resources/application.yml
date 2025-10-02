@@ -1,0 +1,46 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: index-service
+  
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        concurrency: 5
+        max-concurrency: 10
+        prefetch: 10
+        retry:
+          enabled: true
+          initial-interval: 1000
+          max-attempts: 3
+          multiplier: 2
+
+elasticsearch:
+  host: localhost
+  port: 9200
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+  health:
+    elasticsearch:
+      enabled: true
+    rabbit:
+      enabled: true
+
+logging:
+  level:
+    com.enterprise.docsearch: DEBUG
+    org.springframework.amqp: INFO
+    co.elastic.clients: INFO
