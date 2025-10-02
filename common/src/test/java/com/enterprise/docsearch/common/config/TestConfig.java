@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
 @TestConfiguration
@@ -14,6 +15,9 @@ public class TestConfig {
 
     @MockBean
     private RedisTemplate<String, String> redisTemplate;
+
+    @MockBean
+    private RedisConnectionFactory redisConnectionFactory;
 
     @MockBean(name = "rabbitTemplate")
     private RabbitTemplate rabbitTemplate;
